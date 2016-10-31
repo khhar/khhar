@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    border-radius: 0 !important;
+}
+
+/* admin */
+.admin-login-cont {
+    margin-top: 100px;
+}
+
+.input-lg {
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.btn-lg {
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.login-error {
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.film-insert-inp {
+    border-radius: 0;
+}
+
+.film-insert-btn {
+    border-radius: 0;
+}
+
+.film-update-btn {
+    border-radius: 0;
+}
+
+.container {
+    padding: 0px;
+    margin-top: 50px;
+}
+
+.votes-inp {
+    padding: 2px 5px;
+}
+
+.glyphicon-remove {
+    color: red;
+    cursor: pointer;
+}
+
+.error-or-success {
+    width: 195px;
+    display: none;
+    padding: 10px;
+    margin-top: 30px;
+    font-weight: 700;
+}
+/* ----- */
+
+/* error 404 */
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }
+/* --------- */
+
+/* user page */
+.progress {
+    position: relative;
+    height: 20px;
+    padding: 0px;
+    font-size:12px;
+}
+.progress > .progress-type {
+    position: absolute;
+    left: 0px;
+    font-weight: 600;
+    padding: 3px 30px 2px 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(25, 25, 25, 0.2);
+}
+.progress > .progress-completed {
+    position: absolute;
+    right: 0px;
+    font-weight: 800;
+    padding: 3px 10px 2px;
+}
+
+.voting-success {
+    text-align: center;
+    font-weight: 700;
+    color: #cc6600;
+    display: none;
+}
+/* --------- */
