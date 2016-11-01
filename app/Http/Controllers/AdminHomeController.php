@@ -34,6 +34,26 @@ class AdminHomeController extends Controller
             return Redirect::route('adminHome')->withErrors('error insert');
         }
         return Redirect::route('adminHome');
-
+    }
+    public function editFilm(Request $request) {
+        if( $request->ajax() ) {
+            $film_id = $request->input('ajax_film_id');
+            $film_name = $request->input('ajax_film_name');
+            $votes = $request->input('ajax_film_votes');
+            $editFilm = DB::table('films')->where('id', $film_id)->update(['film_name' => $film_name, 'votes' => $votes]);
+            if(!$editFilm){
+                echo 'error';
+            }
+            else {
+                echo 'success';
+            }
+        }
+    }
+    public function deleteFilm(Request $request) {
+        if( $request->ajax() ) {
+            $film_id = $request->input('ajax_film_id');;
+            $deleteFilm = DB::table('films')->where('id', $film_id)->delete();
+            echo 'success';
+        }
     }
 }

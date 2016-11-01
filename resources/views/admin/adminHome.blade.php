@@ -10,7 +10,7 @@
             </div>
             <button type="submit" class="btn btn-success film-insert-btn">Insert</button>
         {{ Form::close() }}
-        <span class="error-or-success"></span>
+        <p class="error-or-success"></p>
         <div class="container">
             <table class="table table-bordered table-hover">
                 <thead>
@@ -24,10 +24,13 @@
                 <tbody>
                 @foreach($films as $film)
                     <tr>
-                        <td><input class="votes-inp film-name-inp" type="text" value="{{ $film->film_name }}" /></td>
+                        <td>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input class="votes-inp film-name-inp" type="text" value="{{ $film->film_name }}" />
+                        </td>
                         <td><input class="votes-inp film-votes-inp" type="number" value="{{ $film->votes }}" min="0" /></td>
-                        <td><button type="button" class="btn btn-success film-update-btn">Update</button></td>
-                        <td><span class="glyphicon glyphicon-remove del-film" data-toggle="modal" data-target="#myModal" data-id="{{ $film->id }}"></span></td>
+                        <td><button type="button" class="btn btn-warning film-update-btn" data-id="{{ $film->id }}">Edit</button></td>
+                        <td><button  type="button" class="btn btn-danger del-film" data-toggle="modal" data-target="#myModal" data-id="{{ $film->id }}">Delete</button></td>
                     </tr>
                 @endforeach
                 </tbody>

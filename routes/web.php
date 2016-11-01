@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+    'as' => 'welcome',
+    'uses' => 'HomeController@index'
+]);
 
 Route::get('/admin', [
     'as' => 'adminLogin',
@@ -39,3 +40,22 @@ Route::post('/filminsert', [
     'uses' => 'AdminHomeController@insert'
 ]);
 
+Route::post('/editFilm', [
+    'as' => 'editFilm',
+    'uses' => 'AdminHomeController@editFilm'
+]);
+
+Route::post('/deleteFilm', [
+    'as' => 'deleteFilm',
+    'uses' => 'AdminHomeController@deleteFilm'
+]);
+
+Route::post('/voteFilm', [
+    'as' => 'voteFilm',
+    'uses' => 'HomeController@voteFilm'
+]);
+
+Route::get('/films', [
+    'as' => 'films',
+    'uses' => 'HomeController@films'
+]);
